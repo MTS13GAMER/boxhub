@@ -1,0 +1,30 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "BoxBuh", HidePremium = false, SaveConfig = false, ConfigFolder = "Box"})
+
+local Tab = Window:MakeTab({
+	Name = "Inicio",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "Ben-vindo(a)",
+	Content = "Script Feito Por MTS13GAMER E tnt_oficial",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+Tab:AddButton({
+	Name = "speed",
+	Callback = function()
+		local speed = 1
+     while humanoid.MoveDirection.Magnitude > 0 do
+     speed = speed + 0.1 
+     humanoid.WalkSpeed = 16 * speed  
+     wait(3)
+
+  	end    
+})
+
+OrionLib:Init()
